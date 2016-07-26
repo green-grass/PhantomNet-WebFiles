@@ -33,6 +33,11 @@ namespace PhantomNet.AspNetCore.RemoteFolder.Mvc
             ValidateToken(actionName, data);
         }
 
+        protected virtual void ValidateToken(string actionName, params string[] data)
+        {
+            ValidateToken(actionName, string.Join(string.Empty, data));
+        }
+
         protected virtual void ValidateToken(string actionName, string data)
         {
             long timeStamp;
