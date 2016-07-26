@@ -361,7 +361,7 @@ namespace PhantomNet.AspNetCore.RemoteFolder
             fileNameWithoutExtension = fileNameWithoutExtension ?? Path.GetFileNameWithoutExtension(fileName);
             if (urlFriendly)
             {
-                fileNameWithoutExtension = StringProcessor.ToUrlFriendly(fileNameWithoutExtension);
+                fileNameWithoutExtension = fileNameWithoutExtension.ToUrlFriendly();
             }
             var extension = Path.GetExtension(fileName);
             fileName = $"{fileNameWithoutExtension}{extension}";
