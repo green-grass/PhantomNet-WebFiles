@@ -16,7 +16,7 @@
     "Microsoft.Extensions.Options": "1.0.0",
     "NETStandard.Library": "1.6.0",
     "Newtonsoft.Json": "9.0.1",
-    "PhantomNet.Core": "1.1.0-*"
+    "PhantomNet.Core": "1.0.3-*"
   },
 
   "frameworks": {

@@ -14,7 +14,7 @@
   "dependencies": {
     "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
     "NETStandard.Library": "1.6.0",
-    "PhantomNet.Core": "1.1.0-beta-*",
+    "PhantomNet.Core": "1.0.3-*",
     "PhantomNet.AspNetCore.RemoteFolder": "1.0.0-*"
   },
 
