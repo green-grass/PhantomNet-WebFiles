@@ -15,7 +15,7 @@
     "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
     "Microsoft.AspNetCore.Http": "1.0.0",
     "NETStandard.Library": "1.6.0",
-    "PhantomNet.Core": "1.1.0-beta-*"
+    "PhantomNet.Core": "1.1.0-*"
   },
 
   "frameworks": {

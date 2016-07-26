@@ -11,6 +11,14 @@
     "projectUrl": "https://github.com/green-grass/PhantomNet-WebFiles"
   },
 
+  "dependencies": {
+    "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
+    "Microsoft.Extensions.Options": "1.0.0",
+    "NETStandard.Library": "1.6.0",
+    "Newtonsoft.Json": "9.0.1",
+    "PhantomNet.Core": "1.1.0-*"
+  },
+
   "frameworks": {
     "netstandard1.6": {
       "imports": "dnxcore50"
