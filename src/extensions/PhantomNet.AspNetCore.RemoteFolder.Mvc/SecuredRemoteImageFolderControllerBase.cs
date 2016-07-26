@@ -29,16 +29,10 @@ namespace PhantomNet.AspNetCore.RemoteFolder.Mvc
                 checksum += file.Length;
             }
 
-            var data = $"{key}{checksum}";
-            ValidateToken(actionName, data);
+            ValidateToken(actionName, key, checksum.ToString());
         }
 
         protected virtual void ValidateToken(string actionName, params string[] data)
-        {
-            ValidateToken(actionName, string.Join(string.Empty, data));
-        }
-
-        protected virtual void ValidateToken(string actionName, string data)
         {
             long timeStamp;
             try
@@ -51,7 +45,7 @@ namespace PhantomNet.AspNetCore.RemoteFolder.Mvc
                 throw new InvalidOperationException();
             }
             var token = Request.Headers["token"];
-            if (!TokenProvider.ValidateToken(SecretKey, actionName, data, timeStamp, token))
+            if (!TokenProvider.ValidateToken(SecretKey, actionName, string.Join(string.Empty, data), timeStamp, token))
             {
                 // TODO:: Log error, error message
                 throw new UnauthorizedAccessException();
