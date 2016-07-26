@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.AspNetCore.Http;
 
 namespace PhantomNet.AspNetCore.RemoteFolder.Mvc
 {
@@ -18,6 +19,19 @@ namespace PhantomNet.AspNetCore.RemoteFolder.Mvc
         protected IApiTokenProvider TokenProvider { get; }
 
         protected string SecretKey { get; }
+
+        protected virtual void ValidateToken(string actionName, string key, IFormFileCollection files)
+        {
+            long checksum = 0;
+            foreach (var file in files)
+            {
+                // TODO:: Calculate checksum
+                checksum += file.Length;
+            }
+
+            var data = $"{key}{checksum}";
+            ValidateToken(actionName, data);
+        }
 
         protected virtual void ValidateToken(string actionName, string data)
         {
