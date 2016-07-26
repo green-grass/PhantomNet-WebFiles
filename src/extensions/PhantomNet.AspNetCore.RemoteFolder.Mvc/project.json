@@ -1,5 +1,15 @@
 ﻿{
+  "title": "PhantomNet.AspNetCore.WebFiles",
+  "copyright": "Green Grass",
+  "description": "PhantomNet.AspNetCore.WebFiles class library",
+  "language": "en",
   "version": "1.0.0-beta-*",
+  "authors": [ "Minh Nguyen" ],
+
+  "packOptions": {
+    "licenseUrl": "https://github.com/green-grass/PhantomNet-WebFiles/blob/master/LICENSE",
+    "projectUrl": "https://github.com/green-grass/PhantomNet-WebFiles"
+  },
 
   "dependencies": {
     "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",

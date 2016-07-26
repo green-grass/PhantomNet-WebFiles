@@ -1,12 +1,14 @@
 ﻿{
+  "title": "PhantomNet.AspNetCore.RemoteFolder.Mvc",
+  "copyright": "Green Grass",
+  "description": "PhantomNet.AspNetCore.RemoteFolder.Mvc class library",
+  "language": "en",
   "version": "1.0.0-beta-*",
+  "authors": [ "Minh Nguyen" ],
 
-  "dependencies": {
-    "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
-    "Microsoft.Extensions.Options": "1.0.0",
-    "NETStandard.Library": "1.6.0",
-    "Newtonsoft.Json": "9.0.1",
-    "PhantomNet.Core": "1.1.0-beta-*"
+  "packOptions": {
+    "licenseUrl": "https://github.com/green-grass/PhantomNet-WebFiles/blob/master/LICENSE",
+    "projectUrl": "https://github.com/green-grass/PhantomNet-WebFiles"
   },
 
   "frameworks": {

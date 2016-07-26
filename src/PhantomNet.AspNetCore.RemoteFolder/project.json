@@ -1,5 +1,15 @@
 ﻿{
+  "title": "PhantomNet.AspNetCore.RemoteFolder",
+  "copyright": "Green Grass",
+  "description": "PhantomNet.AspNetCore.RemoteFolder class library",
+  "language": "en",
   "version": "1.0.0-beta-*",
+  "authors": [ "Minh Nguyen" ],
+
+  "packOptions": {
+    "licenseUrl": "https://github.com/green-grass/PhantomNet-WebFiles/blob/master/LICENSE",
+    "projectUrl": "https://github.com/green-grass/PhantomNet-WebFiles"
+  },
 
   "dependencies": {
     "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
