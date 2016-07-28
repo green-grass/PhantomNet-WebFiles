@@ -30,7 +30,7 @@ namespace PhantomNet.AspNetCore.RemoteFolder
             if (remoteFolderServiceType == customType ||
                 !remoteFolderServiceType.GetTypeInfo().IsAssignableFrom(customType.GetTypeInfo()))
             {
-                throw new InvalidOperationException(string.Format(Strings.InvalidServiceType, customType.Name, nameof(RemoteFolderService<RemoteFile>), RemoteFileType.Name));
+                throw new InvalidOperationException(Resources.FormatInvalidServiceType(customType.Name, nameof(RemoteFolderService<RemoteFile>), RemoteFileType.Name));
             }
 
             Services.AddScoped(customType, services => services.GetRequiredService(remoteFolderServiceType));
@@ -44,7 +44,7 @@ namespace PhantomNet.AspNetCore.RemoteFolder
             if (remoteImageFolderServiceType == customType ||
                 !remoteImageFolderServiceType.GetTypeInfo().IsAssignableFrom(customType.GetTypeInfo()))
             {
-                throw new InvalidOperationException(string.Format(Strings.InvalidServiceType, customType.Name, nameof(RemoteImageFolderService<RemoteImage>), RemoteImageType.Name));
+                throw new InvalidOperationException(Resources.FormatInvalidServiceType(customType.Name, nameof(RemoteImageFolderService<RemoteImage>), RemoteImageType.Name));
             }
 
             Services.AddScoped(customType, services => services.GetRequiredService(remoteImageFolderServiceType));
