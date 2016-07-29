@@ -14,7 +14,7 @@
         {
             return new GenericError {
                 Code = nameof(NoFileToUpload),
-                Description = Resources.NoFileToUploadError
+                Description = Strings.NoFileToUploadError
             };
         }
 
@@ -22,7 +22,7 @@
         {
             return new GenericError {
                 Code = nameof(ToManyFilesToUpload),
-                Description = Resources.ToManyFilesToUploadError
+                Description = Strings.ToManyFilesToUploadError
             };
         }
 
@@ -30,7 +30,7 @@
         {
             return new GenericError {
                 Code = nameof(FileNotFound),
-                Description = Resources.FormatFileNotFoundError(fileName)
+                Description = Strings.FormatFileNotFoundError(fileName)
             };
         }
     }

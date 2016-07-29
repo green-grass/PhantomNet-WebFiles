@@ -5,10 +5,10 @@ namespace PhantomNet.AspNetCore.RemoteFolder
     using System.Reflection;
     using System.Resources;
 
-    internal static class Resources
+    internal static class Strings
     {
         private static readonly ResourceManager _resourceManager
-            = new ResourceManager("PhantomNet.AspNetCore.RemoteFolder.Resources", typeof(Resources).GetTypeInfo().Assembly);
+            = new ResourceManager("PhantomNet.AspNetCore.RemoteFolder.Strings", typeof(Strings).GetTypeInfo().Assembly);
 
         /// <summary>
         /// The file {0} could not be found.

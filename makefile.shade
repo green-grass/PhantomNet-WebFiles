@@ -1,0 +1,33 @@
+
+var VERSION='0.1'
+var FULL_VERSION='0.1'
+
+use namespace="System.Globalization"
+use import="Files"
+
+default BASE_DIR='${Directory.GetCurrentDirectory()}'
+
+#resx
+   @{
+     var cultures = CultureInfo.GetCultures(CultureTypes.NeutralCultures | CultureTypes.InstalledWin32Cultures | CultureTypes.SpecificCultures);
+     foreach (var file in Directory.EnumerateFiles(BASE_DIR, "*.resx", SearchOption.AllDirectories))
+     {
+        var splitFileName = Path.GetFileNameWithoutExtension(file).Split(new string[] { "." }, StringSplitOptions.None);
+	 
+        if (splitFileName.Length > 1)
+        {
+            var localeString = splitFileName.Last();
+            if (!cultures.Any(c => localeString.Equals(c.Name)))
+            {
+                UpdateResx(file);
+            }
+        }
+        else
+        {
+            UpdateResx(file);
+        }
+     }
+   }
+
+macro name="UpdateResx" resxFile='string'
+    advanced-resx
