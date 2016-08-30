@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Options;
 
@@ -6,9 +7,22 @@ namespace PhantomNet.AspNetCore.WebFiles
 {
     public abstract class PhysicalFileProviderBase
     {
-        public PhysicalFileProviderBase(string defaultVirtualBasePath, IHostingEnvironment env, IOptions<PhysicalFileProviderOptions> optionsAccessor)
+        public PhysicalFileProviderBase(
+            string defaultVirtualBasePath,
+            IHostingEnvironment env,
+            IOptions<PhysicalFileProviderOptions> physicalFileProviderOptions)
         {
-            VirtualBasePath = optionsAccessor.Value.VirtualBasePath ?? defaultVirtualBasePath;
+            if (env == null)
+            {
+                throw new ArgumentNullException(nameof(env));
+            }
+
+            if (physicalFileProviderOptions == null)
+            {
+                throw new ArgumentNullException(nameof(physicalFileProviderOptions));
+            }
+
+            VirtualBasePath = physicalFileProviderOptions.Value.VirtualBasePath ?? defaultVirtualBasePath;
             PhysicalBasePath = env.WebRootPath;
         }
 

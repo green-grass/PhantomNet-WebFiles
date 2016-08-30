@@ -19,12 +19,22 @@ namespace PhantomNet.AspNetCore.WebFiles
         public WebApiFileProviderBase(
             IApiTokenProvider tokenProvider,
             IHttpContextAccessor contextAccessor,
-            IOptions<WebApiFileProviderOptions> optionsAccessor)
+            IOptions<WebApiFileProviderOptions> webApiFileProviderOptions)
         {
+            if (tokenProvider == null)
+            {
+                throw new ArgumentNullException(nameof(tokenProvider));
+            }
+
+            if (webApiFileProviderOptions == null)
+            {
+                throw new ArgumentNullException(nameof(webApiFileProviderOptions));
+            }
+
             TokenProvider = tokenProvider;
-            SecretKey = optionsAccessor.Value.SecretKey ?? string.Empty;
-            TokenTimeOut = optionsAccessor.Value.TokenTimeOut ?? DefaultTokenTimeOut;
-            EndPoint = optionsAccessor.Value.EndPoint;
+            SecretKey = webApiFileProviderOptions.Value.SecretKey ?? string.Empty;
+            TokenTimeOut = webApiFileProviderOptions.Value.TokenTimeOut ?? DefaultTokenTimeOut;
+            EndPoint = webApiFileProviderOptions.Value.EndPoint;
 
             _context = contextAccessor?.HttpContext;
         }
