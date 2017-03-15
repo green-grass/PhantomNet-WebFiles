@@ -18,8 +18,6 @@ namespace PhantomNet.AspNetCore.RemoteFolder
         public const string PartSizeHeader = "X-Part-Size";
         public const string FileNameHeader = "X-File-Name";
 
-        private StringProcessor _stringProcessor;
-
         public RemoteFolderService(
             IHostingEnvironment env,
             IHttpContextAccessor contextAccessor,
@@ -31,19 +29,6 @@ namespace PhantomNet.AspNetCore.RemoteFolder
         }
 
         protected HttpContext Context { get; }
-
-        protected StringProcessor StringProcessor
-        {
-            get
-            {
-                if (_stringProcessor == null)
-                {
-                    _stringProcessor = new StringProcessor();
-                }
-
-                return _stringProcessor;
-            }
-        }
 
         protected string PhysicalBasePath { get; }
 

@@ -1,4 +1,6 @@
-﻿namespace PhantomNet.AspNetCore.RemoteFolder
+﻿using PhantomNet.AspNetCore.RemoteFolder.Properties;
+
+namespace PhantomNet.AspNetCore.RemoteFolder
 {
     public class RemoteFolderErrorDescriber : ErrorDescriber
     {
@@ -30,7 +32,7 @@
         {
             return new GenericError {
                 Code = nameof(FileNotFound),
-                Description = Strings.FormatFileNotFoundError(fileName)
+                Description = string.Format(Strings.FileNotFoundError, fileName)
             };
         }
     }
