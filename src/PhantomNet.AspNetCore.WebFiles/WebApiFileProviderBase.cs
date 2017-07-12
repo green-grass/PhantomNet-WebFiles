@@ -139,7 +139,7 @@ namespace PhantomNet.AspNetCore.WebFiles
                 content.Headers.Add("timeStamp", timeStamp.ToString());
                 content.Headers.Add("token", token);
 
-                var requestUri = Path.Combine(EndPoint, actionName, $"{key}");
+                var requestUri = Path.Combine(EndPoint, actionName, $"{key}").Replace("\\", "/");
                 try
                 {
                     using (var respond = await client.PostAsync(requestUri, content, CancellationToken))

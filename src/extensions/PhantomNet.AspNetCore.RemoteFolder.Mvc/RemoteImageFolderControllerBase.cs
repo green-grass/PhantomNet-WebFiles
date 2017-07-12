@@ -44,7 +44,7 @@ namespace PhantomNet.AspNetCore.RemoteFolder.Mvc
         protected virtual async Task<JsonResult> InternalUploadImage(string virtualPath, bool single = false)
         {
             var result = await RemoteFolderService.UploadAsync(Request.Form.Files, virtualPath, single);
-            return Json(new { success = result.Succeeded });
+            return Json(new { success = result.Succeeded, errors = result.Errors });
         }
 
         protected virtual JsonResult InternalRenameImage(string virtualPath, string fileName, string newName)
@@ -52,6 +52,7 @@ namespace PhantomNet.AspNetCore.RemoteFolder.Mvc
             var result = RemoteFolderService.Rename(virtualPath, fileName, newName);
             return Json(new {
                 success = result.Succeeded,
+                errors = result.Errors,
                 newFileName = result.Succeeded ? newName : null,
                 fileNotFound = result.Errors.FirstOrDefault()?.Code == nameof(RemoteFolderErrorDescriber.FileNotFound)
             });
@@ -60,7 +61,7 @@ namespace PhantomNet.AspNetCore.RemoteFolder.Mvc
         protected virtual JsonResult InternalDeleteImage(string virtualPath, string fileName)
         {
             var result = RemoteFolderService.Delete(virtualPath, fileName);
-            return Json(new { success = result.Succeeded });
+            return Json(new { success = result.Succeeded, errors = result.Errors });
         }
     }
 }
