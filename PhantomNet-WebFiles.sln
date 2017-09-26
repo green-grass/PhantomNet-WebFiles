@@ -1,24 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8D8D705A-B4AE-4AD0-8DC5-5136C252C356}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6ED7A88E-8248-490F-B60E-8403F7B01743}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
 		Build.ps1 = Build.ps1
-		global.json = global.json
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.WebFiles", "src\PhantomNet.AspNetCore.WebFiles\PhantomNet.AspNetCore.WebFiles.xproj", "{9039EB31-E8AC-480B-8CFC-3F28DE8AFFE0}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.RemoteFolder", "src\PhantomNet.AspNetCore.RemoteFolder\PhantomNet.AspNetCore.RemoteFolder.xproj", "{A2A3FC56-4852-49AC-92D1-6CE237A2874A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extensions", "extensions", "{0B5E6E95-2011-4482-B427-2CCE62398C60}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.RemoteFolder.Mvc", "src\extensions\PhantomNet.AspNetCore.RemoteFolder.Mvc\PhantomNet.AspNetCore.RemoteFolder.Mvc.xproj", "{CD2E2F81-FE6F-4B89-99FE-67C4067EFE9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.AspNetCore.WebFiles", "src\PhantomNet.AspNetCore.WebFiles\PhantomNet.AspNetCore.WebFiles.csproj", "{9039EB31-E8AC-480B-8CFC-3F28DE8AFFE0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.AspNetCore.RemoteFolder", "src\PhantomNet.AspNetCore.RemoteFolder\PhantomNet.AspNetCore.RemoteFolder.csproj", "{A2A3FC56-4852-49AC-92D1-6CE237A2874A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.AspNetCore.RemoteFolder.Mvc", "src\extensions\PhantomNet.AspNetCore.RemoteFolder.Mvc\PhantomNet.AspNetCore.RemoteFolder.Mvc.csproj", "{CD2E2F81-FE6F-4B89-99FE-67C4067EFE9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,9 +43,12 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{0B5E6E95-2011-4482-B427-2CCE62398C60} = {8D8D705A-B4AE-4AD0-8DC5-5136C252C356}
 		{9039EB31-E8AC-480B-8CFC-3F28DE8AFFE0} = {8D8D705A-B4AE-4AD0-8DC5-5136C252C356}
 		{A2A3FC56-4852-49AC-92D1-6CE237A2874A} = {8D8D705A-B4AE-4AD0-8DC5-5136C252C356}
-		{0B5E6E95-2011-4482-B427-2CCE62398C60} = {8D8D705A-B4AE-4AD0-8DC5-5136C252C356}
 		{CD2E2F81-FE6F-4B89-99FE-67C4067EFE9D} = {0B5E6E95-2011-4482-B427-2CCE62398C60}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54772DCF-9A34-4C9C-9D50-F1D37AD1AB87}
 	EndGlobalSection
 EndGlobal

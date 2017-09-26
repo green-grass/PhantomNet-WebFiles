@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>PhantomNet.AspNetCore.RemoteFolder.Mvc class library</Description>
+    <Copyright>Green Grass</Copyright>
+    <AssemblyTitle>PhantomNet.AspNetCore.RemoteFolder.Mvc</AssemblyTitle>
+    <VersionPrefix>1.0.0-beta</VersionPrefix>
+    <Authors>Minh Nguyen</Authors>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <AssemblyName>PhantomNet.AspNetCore.WebFiles</AssemblyName>
+    <PackageId>PhantomNet.AspNetCore.WebFiles</PackageId>
+    <PackageProjectUrl>https://github.com/green-grass/PhantomNet-WebFiles</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/green-grass/PhantomNet-WebFiles/blob/master/LICENSE</PackageLicenseUrl>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="1.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="PhantomNet.Core" Version="1.0.3-*" />
+  </ItemGroup>
+
+</Project>
