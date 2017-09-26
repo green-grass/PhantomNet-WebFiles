@@ -4,7 +4,7 @@
     <Description>PhantomNet.AspNetCore.WebFiles class library</Description>
     <Copyright>Green Grass</Copyright>
     <AssemblyTitle>PhantomNet.AspNetCore.WebFiles</AssemblyTitle>
-    <VersionPrefix>1.0.0-beta</VersionPrefix>
+    <VersionPrefix>1.0.3</VersionPrefix>
     <Authors>Minh Nguyen</Authors>
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>PhantomNet.AspNetCore.RemoteFolder.Mvc</AssemblyName>

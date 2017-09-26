@@ -26,11 +26,18 @@ if(Test-Path .\artifacts) { Remove-Item .\artifacts -Force -Recurse }
 
 exec { & dotnet restore }
 
-$revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
-$revision = "{0:D4}" -f [convert]::ToInt32($revision, 10)
-
 # exec { & dotnet test .\test\PhantomNet.Core.Tests -c Release }
 
-exec { & dotnet pack .\src\PhantomNet.AspNetCore.WebFiles -c Release -o ..\..\artifacts --version-suffix=$revision }
-exec { & dotnet pack .\src\PhantomNet.AspNetCore.RemoteFolder -c Release -o ..\..\artifacts --version-suffix=$revision }
-exec { & dotnet pack .\src\extensions\PhantomNet.AspNetCore.RemoteFolder.Mvc -c Release -o ..\..\..\artifacts --version-suffix=$revision }
+if ($env:APPVEYOR_REPO_TAG -eq $true) {
+	exec { & dotnet pack .\src\PhantomNet.AspNetCore.WebFiles -c Release -o ..\..\artifacts }
+	exec { & dotnet pack .\src\PhantomNet.AspNetCore.RemoteFolder -c Release -o ..\..\artifacts }
+	exec { & dotnet pack .\src\extensions\PhantomNet.AspNetCore.RemoteFolder.Mvc -c Release -o ..\..\..\artifacts }
+} else {
+	$revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
+	$revision = "{0:D4}" -f [convert]::ToInt32($revision, 10);
+	$suffix = "beta-" + $revision
+
+	exec { & dotnet pack .\src\PhantomNet.AspNetCore.WebFiles -c Release -o ..\..\artifacts --version-suffix=$suffix }
+	exec { & dotnet pack .\src\PhantomNet.AspNetCore.RemoteFolder -c Release -o ..\..\artifacts --version-suffix=$suffix }
+	exec { & dotnet pack .\src\extensions\PhantomNet.AspNetCore.RemoteFolder.Mvc -c Release -o ..\..\..\artifacts --version-suffix=$suffix }
+}
